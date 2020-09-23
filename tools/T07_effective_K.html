@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Effective hydraulic conductivity excel sheet by Dr. Liedl &#8212; Groundwater I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://tu-dresden.de/bu/umwelt/hydro/igw/tools/T07_effective_K.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../qa/51.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="T03_decay.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://tu-dresden.de/bu/umwelt/hydro/igw/tools/T07_effective_K.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Effective hydraulic conductivity excel sheet by Dr. Liedl" />
+<meta property="og:description" content="Effective hydraulic conductivity excel sheet by Dr. Liedl  import matplotlib.pyplot as plt import numpy as np import pandas as pd import ipywidgets as widgets f" />
+<meta property="og:image"       content="https://tu-dresden.de/bu/umwelt/hydro/igw/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Groundwater I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_general.html">
+   About this Groundwater Course and Contents
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/background/00_general.html">
+   About this Groundwater Course and Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/background/01_python.html">
+   Python Programming language
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/background/02_jupyter.html">
+   JUPYTER Notebook/Lab Interface for Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/background/02_jupyter.html#how-to-use-jupyter">
+   How to use JUPYTER
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/background/03_basic_hydrogeology.html">
+   Course Introduction - Groundwater I
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Aquifer Properties and groundwater flow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/13_gw_storage.html">
+   Lecture 3-  Groundwater as a reservoir
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/14_Darcy_law_K.html">
+   Lecture 4 - Darcy’s Law and Conductivity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T3_flow_complex.html">
+   Tutorial 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T3_flow_complex.html#solutions-for-homework-problems-1-4">
+   Solutions for homework problems 1 - 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T3_flow_complex.html#effective-conductivity-and-flow-nets">
+   Effective conductivity and flow nets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T3_flow_complex.html#homework-problems-on-effective-conductivity-and-flow-nets">
+   Homework problems on effective conductivity and flow nets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T4_wells.html">
+   Tutorial 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T4_wells.html#tutorial-6-problems-on-wells">
+   Tutorial 6 - Problems on Wells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/T4_wells.html#home-work-problems-effective-conductivity-and-wells">
+   Home Work Problems - Effective Conductivity and Wells
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/flow/Tutorial_07.html">
+   Tutorial 7
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Groundwater Transport
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/transport/21_1_adv_dis.html">
+   Conservative transport Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/transport/21_conservative.html">
+   Lecture 9-  Conservative Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/transport/Tutorial_05.html">
+   Tutorial 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/transport/Tutorial_05.html#homework-problems">
+   Homework Problems
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Groundwater Modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/groundwater%20modelling/31.html">
+   Groundwater Modelling - Some Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/groundwater%20modelling/ExampleGroundwaterModel.html">
+   Example of a Groundwater Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/groundwater%20modelling/Functioning%20and%20Relevant%20Components%20of%20Iterative%20Methods.html">
+   Functioning and Relevant Components of Iterative Methods
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Simulation tools
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Effective hydraulic conductivity excel sheet by Dr. Liedl
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tools/T07_effective_K.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/tools/T07_effective_K.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/tools/T07_effective_K.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="effective-hydraulic-conductivity-excel-sheet-by-dr-liedl">
+<h1>Effective hydraulic conductivity excel sheet by Dr. Liedl<a class="headerlink" href="#effective-hydraulic-conductivity-excel-sheet-by-dr-liedl" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please provide the information below:  &quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">Plot_Function</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">L3</span><span class="p">,</span> <span class="n">K1</span><span class="p">,</span> <span class="n">K2</span><span class="p">,</span> <span class="n">K3</span><span class="p">):</span>
+    <span class="n">TL</span><span class="o">=</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">)</span>
+    <span class="n">R1</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span>
+    <span class="n">R2</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">K2</span><span class="p">)</span>
+    <span class="n">R3</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">K3</span><span class="p">)</span>
+    <span class="n">W_K1</span><span class="o">=</span><span class="n">K1</span><span class="o">*</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span>
+    <span class="n">W_K2</span><span class="o">=</span><span class="n">K2</span><span class="o">*</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span>
+    <span class="n">W_K3</span><span class="o">=</span><span class="n">K3</span><span class="o">*</span><span class="p">(</span><span class="n">L3</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span>
+    <span class="n">W_R1</span><span class="o">=</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span><span class="o">/</span><span class="n">K1</span>
+    <span class="n">W_R2</span><span class="o">=</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span><span class="o">/</span><span class="n">K2</span>
+    <span class="n">W_R3</span><span class="o">=</span><span class="p">(</span><span class="n">L3</span><span class="o">/</span><span class="p">(</span><span class="n">TL</span><span class="p">))</span><span class="o">/</span><span class="n">K3</span>
+    <span class="n">R_prependicular</span><span class="o">=</span><span class="p">((</span><span class="n">R1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">R2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">R3</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span>
+    <span class="n">K_prependicular</span><span class="o">=</span><span class="p">(</span><span class="n">TL</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">L1</span><span class="o">/</span><span class="n">K1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="n">K2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">L3</span><span class="o">/</span><span class="n">K3</span><span class="p">))</span>
+    <span class="n">K_parallel</span><span class="o">=</span><span class="nb">float</span><span class="p">((</span><span class="n">L1</span><span class="o">*</span><span class="n">K1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">L2</span><span class="o">*</span><span class="n">K2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">L3</span><span class="o">*</span><span class="n">K3</span><span class="p">))</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">TL</span><span class="p">)</span>
+    <span class="n">R_parallel</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">K_parallel</span>
+    <span class="n">rel_h4</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">rel_h3</span><span class="o">=</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">TL</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="n">K1</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="n">K2</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">L3</span><span class="o">/</span><span class="n">K3</span><span class="p">)))</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">K3</span><span class="p">))</span>
+    <span class="n">rel_h2</span><span class="o">=</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">TL</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="n">K1</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="n">K2</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">L3</span><span class="o">/</span><span class="n">K3</span><span class="p">)))</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">K2</span><span class="p">))</span><span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">rel_h3</span><span class="p">)</span>
+    <span class="n">rel_h1</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">c1</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">c2</span><span class="o">=</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">))</span><span class="o">+</span><span class="mi">0</span>
+    <span class="n">c3</span><span class="o">=</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">))</span>
+    <span class="n">c4</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">rel_Q1</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">W_K1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K1</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K2</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K3</span><span class="p">))</span>
+    <span class="n">rel_Q2</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">W_K2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K1</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K2</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K3</span><span class="p">))</span>
+    <span class="n">rel_Q3</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">W_K3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K1</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K2</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">W_K3</span><span class="p">))</span>
+    <span class="n">Head</span><span class="o">=</span><span class="p">(</span><span class="n">rel_h1</span><span class="p">,</span> <span class="n">rel_h2</span><span class="p">,</span> <span class="n">rel_h3</span><span class="p">,</span> <span class="n">rel_h4</span><span class="p">)</span>
+    <span class="n">Thickness</span><span class="o">=</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">)</span>
+    <span class="n">Relative_discharge</span><span class="o">=</span><span class="p">(</span><span class="n">rel_Q1</span><span class="p">,</span> <span class="n">rel_Q2</span><span class="p">,</span> <span class="n">rel_Q3</span><span class="p">)</span>
+    <span class="n">Layers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Layer 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer 3&quot;</span><span class="p">)</span>
+    <span class="n">dat1</span><span class="o">=</span><span class="p">([</span><span class="n">rel_h1</span><span class="p">,</span> <span class="n">c1</span><span class="p">],</span> <span class="p">[</span><span class="n">rel_h2</span><span class="p">,</span> <span class="n">c2</span><span class="p">],</span> <span class="p">[</span><span class="n">rel_h3</span><span class="p">,</span> <span class="n">c3</span><span class="p">],[</span><span class="n">rel_h4</span><span class="p">,</span> <span class="n">c4</span><span class="p">])</span>
+    <span class="n">dat2</span><span class="o">=</span><span class="p">([</span><span class="n">rel_Q1</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="p">],[</span><span class="n">rel_Q2</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">rel_Q3</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">])</span>
+    <span class="c1"># Plotting prependicular data</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Head</span><span class="p">,</span><span class="n">Thickness</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Flow Prependicular to the Layers&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Relative thickness (-)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Relative head (-)&quot;</span><span class="p">)</span>
+    <span class="c1"># Plotting lines for prependicular</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">))</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">L2</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="n">L1</span><span class="o">/</span><span class="p">(</span><span class="n">L1</span><span class="o">+</span><span class="n">L2</span><span class="o">+</span><span class="n">L3</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="c1"># Table for prependicular</span>
+    <span class="n">Table1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dat1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Relative Head&quot;</span><span class="p">,</span> <span class="s2">&quot;     Relative Thickness&quot;</span><span class="p">])</span>
+    <span class="c1"># Plotting for parallel flow  </span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ay</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ay</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">Layers</span><span class="p">,</span> <span class="n">Relative_discharge</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Flow Parallel to the Layers&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Relative discharge(-)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;No. of layers&quot;</span><span class="p">)</span>
+    <span class="c1">#Table for parallel</span>
+    <span class="n">Table2</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dat2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Relative discharge&quot;</span><span class="p">,</span> <span class="s2">&quot;   No. of Layer&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;   Flow prependicular to the layers&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="n">Table1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;   Flow parallel to the layers&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Table2</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>    
+<span class="n">Inter</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">interact_manual</span><span class="p">(</span><span class="n">Plot_Function</span><span class="p">,</span> 
+                       <span class="n">L1</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Layer Thickness&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+                       <span class="n">K1</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Hydraulic Conductivity&quot;</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+                       <span class="n">L2</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Layer Thickness&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+                       <span class="n">K2</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Hydraulic Conductivity&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+                       <span class="n">L3</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Layer Thickness&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">),</span>
+                       <span class="n">K3</span><span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Hydraulic Conductivity&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Please provide the information below:  
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "28fa213a1c9d49f78d26f66b55e65bdd"}
+</script></div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"459552c10ce24cd5979cb53eb87c46dc": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "ededff6a9c964de5b682bfa2155f22b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cf0f3e3cd1d94c7f9d2c9b04973d5462": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Layer Thickness", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_ededff6a9c964de5b682bfa2155f22b7", "step": null, "style": "IPY_MODEL_459552c10ce24cd5979cb53eb87c46dc", "value": 0.0}}, "2550c4467c954efa9fc134041a1f6099": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "e2dfec3c7c30421080f7135bdfb6c86a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2045b73831124b46b818313d9be7cc1f": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Hydraulic Conductivity", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e2dfec3c7c30421080f7135bdfb6c86a", "step": null, "style": "IPY_MODEL_2550c4467c954efa9fc134041a1f6099", "value": 0.0}}, "94213892ba2c4a8b871fac49d964cdfb": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "f56402347bc4414ea2a7362a55cf213f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9a7eff08b3cd416ba59f55a92f4aa874": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Layer Thickness", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_f56402347bc4414ea2a7362a55cf213f", "step": null, "style": "IPY_MODEL_94213892ba2c4a8b871fac49d964cdfb", "value": 0.0}}, "9c122723ee634cce99053d76dbd01e2d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "4374cc5ac18742d7a1f59b2ab6922ca4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6cae17f9098046a1a2aff9e7e57cf2a2": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Hydraulic Conductivity", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_4374cc5ac18742d7a1f59b2ab6922ca4", "step": null, "style": "IPY_MODEL_9c122723ee634cce99053d76dbd01e2d", "value": 0.0}}, "39553ee1aeb74afab138398d8a4ba099": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "9e6b038af4a74666b88ee0248cb2dc03": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ea80bfe7ce0c4af6bdfca58c0392f98f": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Layer Thickness", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_9e6b038af4a74666b88ee0248cb2dc03", "step": null, "style": "IPY_MODEL_39553ee1aeb74afab138398d8a4ba099", "value": 0.0}}, "975c7c9041864ab2a0f7490f10c7432f": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "0c4124828342494ea2f30e505e562220": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "073c1ad6152b45f7b7d9c77957efc9b0": {"model_name": "FloatTextModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatTextModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatTextView", "continuous_update": false, "description": "Hydraulic Conductivity", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_0c4124828342494ea2f30e505e562220", "step": null, "style": "IPY_MODEL_975c7c9041864ab2a0f7490f10c7432f", "value": 0.0}}, "22ed0b2d522843c1a28170fde96775a9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "28fa213a1c9d49f78d26f66b55e65bdd": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_cf0f3e3cd1d94c7f9d2c9b04973d5462", "IPY_MODEL_9a7eff08b3cd416ba59f55a92f4aa874", "IPY_MODEL_ea80bfe7ce0c4af6bdfca58c0392f98f", "IPY_MODEL_2045b73831124b46b818313d9be7cc1f", "IPY_MODEL_6cae17f9098046a1a2aff9e7e57cf2a2", "IPY_MODEL_073c1ad6152b45f7b7d9c77957efc9b0", "IPY_MODEL_36af6bc024c447cc871b57597e0ca786", "IPY_MODEL_9d13cbbde3f4461ca4369d681c129d2b"], "layout": "IPY_MODEL_22ed0b2d522843c1a28170fde96775a9"}}, "b763429e389e4a8c9c460a5a082a0e8c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6db823a766d84aa48bd8869e6c5ba1c1": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "button_color": null, "font_weight": ""}}, "36af6bc024c447cc871b57597e0ca786": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ButtonView", "button_style": "", "description": "Run Interact", "disabled": false, "icon": "", "layout": "IPY_MODEL_b763429e389e4a8c9c460a5a082a0e8c", "style": "IPY_MODEL_6db823a766d84aa48bd8869e6c5ba1c1", "tooltip": ""}}, "909fa06a05014f9792063d0a55d71a25": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9d13cbbde3f4461ca4369d681c129d2b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_909fa06a05014f9792063d0a55d71a25", "msg_id": "", "outputs": []}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tools"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T03_decay.html" title="previous page">&lt;no title&gt;</a>
+    <a class='right-next' id="next-link" href="../qa/51.html" title="next page">&lt;no title&gt;</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By P. K. Yadav, T. Reimann and many others<br/>
+        
+            &copy; Copyright CC 4.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
