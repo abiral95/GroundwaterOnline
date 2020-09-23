@@ -1,0 +1,39 @@
+- file: intro
+- file: content
+
+- part: Background
+  chapters:
+  - file: lectures/background/00_general
+  - file: lectures/background/01_python
+  - file: lectures/background/02_jupyter
+  - file: lectures/background/03_basic_hydrogeology
+  
+- part: Aquifer Properties and groundwater flow
+  chapters:
+    - file: lectures/flow/13_gw_storage
+    - file: lectures/flow/14_Darcy_law_K
+    - file: lectures/flow/T3_flow_complex
+    - file: lectures/flow/T4_wells
+    - file: lectures/flow/Tutorial_07
+
+- part: Groundwater Transport 
+  chapters:
+    - file: lectures/transport/21_1_adv_dis
+    - file: lectures/transport/21_conservative
+    - file: lectures/transport/Tutorial_05
+
+- part: Groundwater Modelling
+  chapters:
+    - file: lectures/groundwater modelling/31
+    - file: lectures/groundwater modelling/ExampleGroundwaterModel
+    - file: lectures/groundwater modelling/Functioning and Relevant Components of Iterative Methods
+    
+- part: Simulation tools
+  chapters:
+    - file: tools/T03_decay
+    - file: tools/T07_effective_K
+
+- part: Questions and solutions
+  chapters:
+    - file: qa/51
+    - file: qa/52

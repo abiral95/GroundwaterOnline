@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "c:\users\mi\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\client.py", line 1082, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\mi\anaconda3\lib\asyncio\base_events.py", line 583, in run_until_complete
+    return future.result()
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\client.py", line 536, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\client.py", line 827, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\mi\anaconda3\lib\site-packages\nbclient\client.py", line 735, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+im1 = pn.pane.PNG("images/L01_f_1c.png", width=250)
+im2 = pn.pane.PNG("images/L01_f_1b.png", width=275)
+im3 = pn.pane.PNG("images/L01_f_1a.png", width=280)
+
+pn.Row(im1, im2, im3)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m<ipython-input-2-0599577044d1>[0m in [0;36m<module>[0;34m()[0m
+[0;32m----> 1[0;31m [0mim1[0m [0;34m=[0m [0mpn[0m[0;34m.[0m[0mpane[0m[0;34m.[0m[0mPNG[0m[0;34m([0m[0;34m"images/L01_f_1c.png"[0m[0;34m,[0m [0mwidth[0m[0;34m=[0m[0;36m250[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mim2[0m [0;34m=[0m [0mpn[0m[0;34m.[0m[0mpane[0m[0;34m.[0m[0mPNG[0m[0;34m([0m[0;34m"images/L01_f_1b.png"[0m[0;34m,[0m [0mwidth[0m[0;34m=[0m[0;36m275[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0mim3[0m [0;34m=[0m [0mpn[0m[0;34m.[0m[0mpane[0m[0;34m.[0m[0mPNG[0m[0;34m([0m[0;34m"images/L01_f_1a.png"[0m[0;34m,[0m [0mwidth[0m[0;34m=[0m[0;36m280[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0mpn[0m[0;34m.[0m[0mRow[0m[0;34m([0m[0mim1[0m[0;34m,[0m [0mim2[0m[0;34m,[0m [0mim3[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32mC:\Users\mi\AppData\Local\Programs\Python\Python36\lib\site-packages\panel\pane\base.py[0m in [0;36m__init__[0;34m(self, object, **params)[0m
+[1;32m    107[0m         [0mapplies[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mapplies[0m[0;34m([0m[0mobject[0m[0;34m,[0m [0;34m**[0m[0;34m([0m[0mparams[0m [0;32mif[0m [0mself[0m[0;34m.[0m[0m_applies_kw[0m [0;32melse[0m [0;34m{[0m[0;34m}[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    108[0m         [0;32mif[0m [0;34m([0m[0misinstance[0m[0;34m([0m[0mapplies[0m[0;34m,[0m [0mbool[0m[0;34m)[0m [0;32mand[0m [0;32mnot[0m [0mapplies[0m[0;34m)[0m [0;32mand[0m [0mobject[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m [0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 109[0;31m             [0mself[0m[0;34m.[0m[0m_type_error[0m[0;34m([0m[0mobject[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    110[0m [0;34m[0m[0m
+[1;32m    111[0m         [0msuper[0m[0;34m([0m[0mPaneBase[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mobject[0m[0;34m=[0m[0mobject[0m[0;34m,[0m [0;34m**[0m[0mparams[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32mC:\Users\mi\AppData\Local\Programs\Python\Python36\lib\site-packages\panel\pane\image.py[0m in [0;36m_type_error[0;34m(self, object)[0m
+[1;32m     66[0m         [0;32mif[0m [0misinstance[0m[0;34m([0m[0mobject[0m[0;34m,[0m [0mstring_types[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     67[0m             raise ValueError("%s pane cannot parse string that is not a filename "
+[0;32m---> 68[0;31m                              "or URL." % type(self).__name__)
+[0m[1;32m     69[0m         [0msuper[0m[0;34m([0m[0mImageBase[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0m_type_error[0m[0;34m([0m[0mobject[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     70[0m [0;34m[0m[0m
+
+[0;31mValueError[0m: PNG pane cannot parse string that is not a filename or URL.
+ValueError: PNG pane cannot parse string that is not a filename or URL.
+
